@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Developer Rahul Startup Page</title>
+
+    <!-- coloration -->
+    <script>
+      const settings = JSON.parse(localStorage.getItem('settings'))
+      if (settings) {
+        const colorScheme = settings.appearance.colorScheme === 'auto'
+          ? window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? 'dark'
+            : 'light'
+          : settings.appearance.colorScheme
+  
+        document.documentElement.style.backgroundColor = settings.appearance.themes[settings.appearance.activeTheme][colorScheme].background
+      }
+    </script>
+    <!-- -->
